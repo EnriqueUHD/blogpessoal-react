@@ -34,7 +34,7 @@ function ListaTemas() {
         headers: { Authorization: token },
       });
     } catch (error: any) {
-      if (error.toString().includes("401")) {
+      if (error.toString().includes("401") || error.toString().includes('403')) {
         handleLogout();
       }
     } finally {
